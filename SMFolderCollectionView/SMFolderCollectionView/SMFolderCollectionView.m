@@ -483,7 +483,7 @@ typedef NS_ENUM(NSUInteger, SMFolderCollectionViewScrollDirection) {
         case XWDragCellCollectionViewScrollDirectionLeft:{
             //这里的动画必须设为NO
             [self setContentOffset:CGPointMake(self.contentOffset.x - 4, self.contentOffset.y) animated:NO];
-            if (!self.isFolder)
+            if (!self.isFolder && !self.removeFromFoldering)
             {
                 self.tempMoveCell.center = CGPointMake(self.tempMoveCell.center.x - 4, self.tempMoveCell.center.y);
             }
@@ -491,7 +491,7 @@ typedef NS_ENUM(NSUInteger, SMFolderCollectionViewScrollDirection) {
             break;
         case XWDragCellCollectionViewScrollDirectionRight:{
             [self setContentOffset:CGPointMake(self.contentOffset.x + 4, self.contentOffset.y) animated:NO];
-            if (!self.isFolder)
+            if (!self.isFolder && !self.removeFromFoldering)
             {
                 self.tempMoveCell.center = CGPointMake(self.tempMoveCell.center.x + 4, self.tempMoveCell.center.y);
             }
@@ -499,7 +499,7 @@ typedef NS_ENUM(NSUInteger, SMFolderCollectionViewScrollDirection) {
             break;
         case XWDragCellCollectionViewScrollDirectionUp:{
             [self setContentOffset:CGPointMake(self.contentOffset.x, self.contentOffset.y - 4) animated:NO];
-            if (!self.isFolder)
+            if (!self.isFolder && !self.removeFromFoldering)
             {
                 self.tempMoveCell.center = CGPointMake(self.tempMoveCell.center.x, self.tempMoveCell.center.y - 4);
             }
@@ -507,7 +507,7 @@ typedef NS_ENUM(NSUInteger, SMFolderCollectionViewScrollDirection) {
             break;
         case XWDragCellCollectionViewScrollDirectionDown:{
             [self setContentOffset:CGPointMake(self.contentOffset.x, self.contentOffset.y + 4) animated:NO];
-            if (!self.isFolder)
+            if (!self.isFolder && !self.removeFromFoldering)
             {
                 self.tempMoveCell.center = CGPointMake(self.tempMoveCell.center.x, self.tempMoveCell.center.y + 4);
             }

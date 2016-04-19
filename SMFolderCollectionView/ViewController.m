@@ -107,12 +107,12 @@ SMFolderCollectionViewDataSource> {
             [array addObject:@28];
             [array addObject:@29];
             [array addObject:@30];
-//            [array addObject:@31];
-//            [array addObject:@32];
-//            [array addObject:@33];
-//            [array addObject:@34];
-//            [array addObject:@35];
-//            [array addObject:@36];
+            [array addObject:@31];
+            [array addObject:@32];
+            [array addObject:@33];
+            [array addObject:@34];
+            [array addObject:@35];
+            [array addObject:@36];
             
             [_collectionDataSource addObject:array];
         }
@@ -166,16 +166,9 @@ SMFolderCollectionViewDataSource> {
                         {
                             break;
                         }
-                        else
-                        {
-                            [weakSelf.collectionView xd_beginInteractiveMovementForItemAtIndexPath:indexPath];
-                        }
-                    }
-                    else
-                    {
-                        [weakSelf.collectionView xd_beginInteractiveMovementForItemAtIndexPath:indexPath];
                     }
                     
+                    [weakSelf.collectionView xd_beginInteractiveMovementForItemAtIndexPath:indexPath];
                     CGPoint tapLocation = [gestureRecognizer locationInView:weakSelf.collectionView];
                     [weakSelf.collectionView xd_updateInteractiveMovementTargetPosition:CGPointMake(tapLocation.x+5, tapLocation.y+5)];
                 }
@@ -438,6 +431,7 @@ SMFolderCollectionViewDataSource> {
     {
         [self.collectionView reloadData];
     }
+    
     NSObject *item = [_collectionDataSource objectAtIndex:[indexPath item]];
     if ([item isKindOfClass:[NSMutableArray class]])
     {
@@ -476,7 +470,7 @@ SMFolderCollectionViewDataSource> {
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
     return CGSizeZero;
-    return CGSizeMake(self.view.frame.size.width, 30);
+//    return CGSizeMake(self.view.frame.size.width, 30);
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
